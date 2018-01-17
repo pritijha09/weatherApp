@@ -1,0 +1,74 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>summery</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-list>
+      <ion-item>Service name:</ion-item>
+      <ion-item>Name:-  {{service.name}}</ion-item>
+        <ion-item>Price:- {{service.price}}</ion-item>
+     
+    </ion-list>
+    <ion-list>
+      <ion-item>Address:</ion-item>
+      <ion-item> Type:- {{address.Type}}</ion-item>
+       <ion-item>LandMark:- {{address.landMark}}</ion-item>
+        <ion-item>Geocode:- {{address.geocode}}</ion-item>
+         <ion-item>Address:- {{address.address}}</ion-item>
+     
+    </ion-list>
+  </ion-card>
+ <ion-list>
+
+  <ion-item>
+    <ion-label>Coupon</ion-label>
+    <ion-input type="text" [(ngModel)]="couponCode"></ion-input>
+      
+  </ion-item>
+  <button ion-button full (click)="checkCoupon()">checkCoupon</button>
+  <ion-list>
+      <ion-item>Amount Pay: {{amount}}</ion-item>
+    </ion-list>
+     <ion-list *ngFor="let card of cards">
+   <ion-item>Card Number:- {{card.last4}}</ion-item>
+    <ion-item>Expiry Date:- {{card.exp_month}}/{{card.exp_year}}</ion-item>
+
+    <button ion-button (click)="goToPayment(card.customer, card.id)"> Payment </button>
+    <ion-fab bottom right edge class="add-photos-btn" (click)="addNewCard()">
+      <button ion-fab mini>Add</button>
+    </ion-fab>
+ </ion-list>
+  <!--<button ion-button (click)="carddetails()"> Checkout </button>-->
+ </ion-list>
+ <ion-list *ngIf="isCardAdd">
+
+  <ion-item>
+    <ion-label>card number</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Expiry month</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.expMonth"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Expiry year</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.expYear"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>cvv</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.cvc"></ion-input>
+  </ion-item>
+  <button ion-button (click)="saveCard()">Save Card </button>
+
+</ion-list>
+</ion-content>

@@ -1,0 +1,64 @@
+<!--
+  Generated template for the AddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>address</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+   <ion-row>
+    <ion-col col-6>
+      Address
+    </ion-col>
+    <ion-col>
+      Address Type
+    </ion-col>
+   
+  </ion-row>
+     <!--<button ion-button full (click)="getAddress()">Get Address</button>-->
+  <ion-row *ngFor="let address of addressDetail">
+    <ion-col col-6>
+    <ion-item (click)="selectAddress(address)">{{address.address}}</ion-item> 
+   
+    </ion-col>
+    <ion-col>
+      {{address.Type}}
+    </ion-col>
+  </ion-row>
+ 
+</ion-grid>
+  <button ion-button full (click)="addAddress()">Add Address</button>
+  <ion-list *ngIf="isAddAddress">
+
+  <ion-item>
+    <ion-label>Geo Code</ion-label>
+    <ion-input type="text" [(ngModel)]="completeaddress.geocode"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Address</ion-label>
+    <ion-input type="text" [(ngModel)]="completeaddress.address"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Landmark</ion-label>
+    <ion-input type="text" [(ngModel)]="completeaddress.landmark"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Type</ion-label>
+    <ion-input type="text" [(ngModel)]="completeaddress.Type"></ion-input>
+  </ion-item>
+
+</ion-list>
+<button ion-button full (click)="save()" *ngIf="isAddAddress">save</button>
+</ion-content>

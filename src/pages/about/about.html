@@ -7,5 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-
+ <p> Item price -$ {{price}} </p>
+ <ion-list *ngFor="let card of cards">
+   <ion-item>Card Number: {{card.last4}}</ion-item>
+    <ion-item>Expiry Date: {{card.exp_month}}/{{card.exp_year}}</ion-item>
+    <button ion-button (click)="goToPayment(card.customer, card.id)"> Payment </button>
+ </ion-list>
+ <!--<div *ngFor="let card of cards">
+   <p>Card Number: </p>
+   <p>Expiry Date: </p>
+    <button ion-button (click)="goToPayment()"> Payment </button>
+ </div>-->
+  <button ion-button (click)="carddetails()"> Checkout </button>
 </ion-content>

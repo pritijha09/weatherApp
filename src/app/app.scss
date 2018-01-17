@@ -1,16 +1,59 @@
-// http://ionicframework.com/docs/theming/
+.main{
+    background-color: #062442;
+    color: white;
+}
 
+.location, .icon, .desc {
+  text-align: center;
+}
+.temp {
+  font-size: 70px;
+  text-align: center;
+  font-weight: normal;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.home {
+  font-family: 'Lobster', cursive;
+  color: white;
+  text-shadow: 1px 0 0 gray, -1px 0 0 gray, 0 1px 0 gray, 0 -1px 0 gray, 1px 1px gray, -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray;
+  
+  h1 {
+    font-size: 5rem;
+  }
+   
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.center {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute !important;
+  text-align: center;
+  width:100%;
+}
+
+.add-photos-btn {
+    position: fixed;
+    bottom: 55px!important;
+}
+.add-photos-btn .fab{
+    width: 45px;
+    height: 45px;
+    background-color: #e33626;
+}

@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>card</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <!--<ion-label floating>card number</ion-label>
+<ion-input  [(ngModel)]="cardinfo.number"></ion-input>
+<ion-label floating>Expiry month</ion-label>
+<ion-input [(ngModel)]="cardinfo.expMonth"></ion-input>
+<ion-label floating>Expiry year</ion-label>
+<ion-input  [(ngModel)]="cardinfo.expYear"></ion-input>
+<ion-label floating>cvv</ion-label>
+<ion-input [(ngModel)]="cardinfo.cvc"></ion-input>-->
+
+<ion-list>
+
+  <ion-item>
+    <ion-label>card number</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Expiry month</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.expMonth"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Expiry year</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.expYear"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>cvv</ion-label>
+    <ion-input type="number" [(ngModel)]="cardinfo.cvc"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<!--<ion-input [(ngModel)]="cardinfo.number" placeholder="card number"></ion-input>
+<ion-input [(ngModel)]="cardinfo.expMonth" placeholder="expiry month"></ion-input>
+<ion-input [(ngModel)]="cardinfo.expYear" placeholder="expiry year"></ion-input>
+<ion-input [(ngModel)]="cardinfo.cvc" placeholder="cvc"></ion-input>-->
+<button ion-button (click)="pay()"> Pay Now </button>
+</ion-content>

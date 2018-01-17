@@ -1,17 +1,39 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar [color]="isRecording ? 'danger' : 'primary'">
     <ion-title>
-      Contact
+      Listen to Me
     </ion-title>
   </ion-navbar>
 </ion-header>
+ 
+<ion-content padding class="home">
+   <div class="fullscreen-bg">
+    <video class="fullscreen-bg__video" autoplay loop muted webkit-playsinline>
+      <source src="assets/Workaholic.mp4" type='video/mp4; codecs="h.264"' >
+      <source src="assets/Workaholic.webm" type="video/webm">
+    </video>
+  </div>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  <div class="center animated zoomIn">
+    <h1>Beautiful App</h1>
+    <h2>Fast. Easy. Cheap.</h2>
+  </div>
+  
+  <button ion-button full (click)="getPermission()">Get Permission</button>
+  <button ion-button full (click)="startListening()">Start Listening</button>
+  <button ion-button full (click)="stopListening()" *ngIf="isIos()">Stop Listening</button>
+  
+ 
+  <ion-card>
+    <ion-card-header>This is what I understood...</ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let match of matches">
+          {{ match }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <button ion-button full (click)="goToBooking()">Make Booking</button>
 </ion-content>

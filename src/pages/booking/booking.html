@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>booking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+   <ion-row>
+    <ion-col col-6>
+      Name
+    </ion-col>
+    <ion-col>
+      Price
+    </ion-col>
+   
+  </ion-row>
+     <!--<button ion-button full (click)="getAddress()">Get Address</button>-->
+  <ion-row *ngFor="let service of serviceDetail">
+    <ion-col col-6>
+    <ion-item (click)="getAddress(service.name, service.price)">{{service.name}}</ion-item> 
+   
+    </ion-col>
+    <ion-col>
+      {{service.price}}
+    </ion-col>
+  </ion-row>
+ 
+</ion-grid>
+</ion-content>

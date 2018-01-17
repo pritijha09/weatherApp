@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>weather</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="main">
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <ion-item>
+            <ion-label>City </ion-label>
+            <ion-input type="text" (keyup)="getQuery()" [(ngModel)]="searchLocation" value=""></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngIf="result">
+          <ion-item *ngFor="let list of result">
+            <span (click)="chooseLocation(list)">{{list.name}}</span>
+            
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50 offset-25>
+         <h2 class="location" (click)="greetings(name)">{{name}}</h2>
+       <div class="icon">
+       <img src="{{icon_Url}}" />
+        </div>
+       <h3 class="desc">{{c_weather}}</h3>
+        <h1 class="temp">{{temp_c}}&deg;</h1>
+      </ion-col>
+    </ion-row>
+     <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <ion-item>
+            <strong>Temp: </strong> {{temperature_string1}}
+          </ion-item>
+          <ion-item>
+            <strong>Relative Humidity: </strong> {{relative_humidity1}}
+          </ion-item>
+          <ion-item>
+            <strong>Dewpoint: </strong> {{dewpoint_string1}}
+          </ion-item>
+          <ion-item>
+            <strong>Visibility: </strong> {{visibility_km1}} km
+          </ion-item>
+          <ion-item>
+            <strong>Wind: </strong> {{wind_kph1}} Km/h
+          </ion-item>
+          <ion-item>
+            <strong>Wind Direction: </strong> {{wind_dir1}}
+          </ion-item>
+          <ion-item>
+            <strong>Heat Index: </strong> {{hear_index_string1}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ <button ion-button (click)="goToMedia()">Go To Media </button>
+
+    <!--<button ion-button (click)="loadAd();">Show Ad</button>-->
+  
+ 
+</ion-content>

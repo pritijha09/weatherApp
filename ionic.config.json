@@ -1,6 +1,6 @@
 {
   "name": "weatherForcasting",
-  "app_id": "",
+  "app_id": "23a66521",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
